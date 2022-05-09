@@ -6,6 +6,7 @@ import FeaturedMovie from './components/FeaturedMovie';
 import Header from './components/Header'
 
 
+
 export default () => {
 
   const[movieList, setMovieList] = useState([]);
@@ -61,11 +62,18 @@ export default () => {
       </section>
           <footer>
           Direitos de imagem para a Netflix,
-          Api e dados pegos do site Themoviedb.org
+          Api e dados pegos do site: Themoviedb.org
           <br></br>Desenvolved by: | Matheus Galvain  
           </footer>
+
+          {movieList.length <= 0 &&
+          <div className='loading'>
+          <img src="https://media.filmelier.com/noticias/br/2020/03/Netflix_LoadTime.gif" alt='Carregando'/>
+          </div>
+        }
     </div>
-  )
+  );
 }
+
 
 
